@@ -141,12 +141,12 @@
 /*=========================================================================
     CHIP BASED BIT SHIFT
     -----------------------------------------------------------------------*/
-	#define ADS1015_CONV_REG_BIT_SHIFT_4           4
-	#define ADS1115_CONV_REG_BIT_SHIFT_0           0
+  #define ADS1015_CONV_REG_BIT_SHIFT_4           4
+  #define ADS1115_CONV_REG_BIT_SHIFT_0           0
 
 /*=========================================================================*/
 
-typedef enum : uint16_t
+typedef enum 
 {
   DIFF_MUX_0_1      = ADS1X15_REG_CONFIG_MUX_DIFF_0_1,
   DIFF_MUX_0_3      = ADS1X15_REG_CONFIG_MUX_DIFF_0_3,
@@ -154,7 +154,7 @@ typedef enum : uint16_t
   DIFF_MUX_2_3      = ADS1X15_REG_CONFIG_MUX_DIFF_2_3
 } adsDiffMux_t;
 
-typedef enum : uint16_t
+typedef enum 
 {
   GAIN_TWOTHIRDS    = ADS1X15_REG_CONFIG_PGA_6_144V,
   GAIN_ONE          = ADS1X15_REG_CONFIG_PGA_4_096V,
@@ -165,7 +165,7 @@ typedef enum : uint16_t
   GAIN_DEFAULT      = ADS1X15_REG_CONFIG_PGA_6_144V
 } adsGain_t;
 
-typedef enum : uint16_t
+typedef enum 
 {
     ADS1015_DR_128SPS          = ADS1015_REG_CONFIG_DR_128SPS,
     ADS1015_DR_250SPS          = ADS1015_REG_CONFIG_DR_250SPS,
@@ -183,8 +183,8 @@ typedef enum : uint16_t
     ADS1115_DR_250SPS          = ADS1115_REG_CONFIG_DR_250SPS,
     ADS1115_DR_475SPS          = ADS1115_REG_CONFIG_DR_475SPS,
     ADS1115_DR_860SPS          = ADS1115_REG_CONFIG_DR_860SPS,
-	
-	DR_DEFAULT_SPS             = (0x0080)     // 1600 for ADS1015, 128 for ADS1115
+  
+  DR_DEFAULT_SPS             = (0x0080)     // 1600 for ADS1015, 128 for ADS1115
 } adsSPS_t;
 
 class Adafruit_ADS1015
@@ -193,8 +193,8 @@ protected:
    // Instance-specific properties
    uint8_t   m_i2cAddress;
    uint8_t   m_bitShift;
-   adsGain_t m_gain                = GAIN_DEFAULT;  /* +/- 6.144V range (limited to VDD +0.3V max!) */
-   adsSPS_t  m_SPS                 = DR_DEFAULT_SPS;
+   adsGain_t m_gain;//                = GAIN_DEFAULT;  /* +/- 6.144V range (limited to VDD +0.3V max!) */
+   adsSPS_t  m_SPS;//                 = DR_DEFAULT_SPS;
 
  public:
   Adafruit_ADS1015(uint8_t i2cAddress = ADS1X15_ADDRESS);
